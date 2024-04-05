@@ -91,6 +91,7 @@ const Header = ({ buttonPrevIcon, buttonNextIcon }: HeaderProps) => {
 
   const yearSelector = useCallback(() => {
     const years = getYearRange(currentYear);
+
     return (
       <Pressable
         onPress={() => {
@@ -103,9 +104,7 @@ const Header = ({ buttonPrevIcon, buttonNextIcon }: HeaderProps) => {
       >
         <View style={[styles.textContainer, theme?.headerTextContainerStyle]}>
           <Text style={[styles.text, theme?.headerTextStyle]}>
-            {calendarView === 'year'
-              ? `${years.at(0)} - ${years.at(-1)}`
-              : dayjs(currentDate).format('YYYY')}
+            {dayjs(currentDate).format('YYYY')}
           </Text>
         </View>
       </Pressable>
